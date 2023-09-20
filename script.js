@@ -1,37 +1,20 @@
-function hello(){
-    console.log('hello1');
-}
-let hello2 = function (){
-    console.log('hello2');
-}
+console.log(window, {document});
+let title = document.getElementById('title');
+console.log({title});
 
-let hello3 = () => {
-    console.log('hello13');
-}
+setTimeout(() => {
+    title.innerText = 'goodbye js';
+}, 5000);
+let r, g, b;
+setInterval(() => {
+    r = math.round(math.random() * 255);
+    g = math.round(math.random() * 255);
+    b = math.round(math.random() * 255);
+    document.body.style.background = 'rgb(${r}, ${g}, $(b))';   
+}, 1000);
 
-let hello4 = () => console.log('hello4');
-
-hello();
-hello2();
-hello3();
-hello4();
-
-let person = {
-    name: 'Kaspar',
-    age: '30',
-    describe(){
-        console.log('name' + this.name + ' age:' + this.age);
-    },
-    describe3: function() {
-        console.log(this);
-        console.log('name:' + this.name + ' age:' + this.age);
-
-    }
-}
-
-    person.name = 'Martin';
-    person.age = 33;
-
-    person.describe();
-    person.describe2();
-    person.describe3();
+let textinput = document.querySelection('textinut');
+textinput.addeventlistener ('chang' evt => {
+    console.log(evt);
+    title.innertext = textinput.valve.split('').reverse().join('');
+});
